@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>10</title>
+    </head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('button').click(function(){
+                $.ajax({
+                    type: "POST", 
+                    url: "file.xml", 
+                    dataType: "xml", 
+                    success: function(data) {
+                        let arrayHtml = "";
+                        let array = new Array(10);
+                       
+                        for (let i = 0; i < array.length; i++) {
+                            array[i] = $(data).find('price').eq(i).html();
+                        }
+                       
+                        array.forEach(element => {
+                            arrayHtml += element + " ";
+                        });
+                        arrayHtml += "</br>Отсортированный массив:</br>"
+
+                        array.sort((a, b) => a - b);
+                         array.forEach(element => {
+                            arrayHtml += element + " ";
+                        });
+
+
+                        let left = array.slice(0, 5);    
+                        console.log(left);         
+                        let right = array.slice(5, 10);
+                        console.log(right);     
+                        arrayHtml += "</br>Левая</br>" 
+                        left.forEach(element => {
+                            arrayHtml += element + " ";
+                        });
+                        arrayHtml += "</br>Правая</br>" 
+                        right.forEach(element => {
+                            arrayHtml += element + " ";
+                        });
+                        arrayHtml += "</br></br>"
+                        $('#output').html(arrayHtml);
+                }});
+            });
+        });
+    </script>
+    <body>
+        <button>Go</button>
+        <div id="output"></div>
+    </body>
+</html>

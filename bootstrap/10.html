@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 10</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src = "http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <ul class = "nav nav-tabs">
+        <li class = "active nav-item"><a  href="#panel1" data-toggle="tab" class="nav-link">Панель 1</a></li>
+        <li class = "nav-item"><a href="#panel2"  data-toggle="tab" class="nav-link">Панель 2</a></li>
+        <li class = "dropdown  nav-item">
+            <a class = "dropdown-toggle nav-item" data-toggle="dropdown">Другие панели<b class = "caret"></b></a>
+            <ul class = "dropdown-menu">
+                <li class="dropdown-item"><a href="#panel3" data-toggle="tab">Панель 3</a></li>
+                <li class="dropdown-item"><a href="#panel4" data-toggle="tab"> Панель 4</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="panel1" class="tab-pane fade in active">
+            <h3>Панель 1</h3>
+            <p>Содержимое 1 панели...</p>
+        </div>
+        <div id="panel2" class="tab-pane fade">
+            <h3>Панель 2</h3>
+            <p>Содержимое 2 панели...</p>
+        </div>
+        <div id="panel3" class="tab-pane fade">
+            <h3>Панель 3</h3>
+            <p>Содержимое 3 панели...</p>
+        </div>
+        <div id="panel4" class="tab-pane fade">
+            <h3>Панель 4</h3>
+            <p>Содержимое 4 панели...</p>
+        </div>
+    </div
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>04</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+            $(document).ready(function(){
+                $("button").click(function () {
+                    $("div").animate({ left: ['+=15%', 'linear'], top: ['+=40%', 'swing'] }, 500, function() {
+                        $(this).animate({ left: ['-=15%', 'linear'], top: ['-=40%', 'swing'] }, 1500);
+                    })
+                });
+            });
+        </script> 
+    </head>
+    <body>
+        <button>Go</button>
+        <div style="background-image:url(green.jpg); height:100px; width:100px; position:absolute;"></div>
+    </body>
+</html>

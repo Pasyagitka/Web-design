@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>08</title>
+    </head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        //5. Создайте ассоциативный массив с использованием JSON. 
+        // Напишите функции нахождения максимального значения ключа, минимального значения ключа. 
+        // Поменяйте местами записи с максимальным и минимальным значением ключа. 
+        let maptoj= new Map([
+        ['Сестра', 'Злата'],
+        ['Я', 'Лиза'],  
+        ['Мама', 'Мила'], 
+        ['Папа', 'Игорь'], 
+        ]);
+        jsonStr = JSON.stringify([...maptoj]);
+        console.log(jsonStr);
+
+        console.log("Первоначальный массив:");
+        arr = new Map(JSON.parse(jsonStr));
+        arr.forEach(function(value,key) {
+            console.log('key = ' + key +', value = ' + value);    
+        });
+        console.log(arr);
+
+        let min = 'Сестра';
+        let max = min;
+
+        arr.forEach(function(value,key) {
+            if (key > max) {max = key;}
+            if (key < min) {min = key;}
+        });
+
+        console.log("Минимальный:" + min);
+        console.log("Максимальный:" + max);
+
+        let buffvalue=arr.get(min);
+
+        arr.set(min, arr.get(max));
+        arr.set(max, buffvalue);
+        console.log(arr);
+
+    </script>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+  <item>
+    <title>Первый</title>
+    <price>13</price>
+  </item>
+  <item>
+    <title>Второй</title>
+    <price>821</price>
+  </item>
+   <item>
+    <title>Третий</title>
+    <price>417</price>
+  </item>
+  <item>
+    <title>Четвертый</title>
+    <price>729</price>
+  </item>
+   <item>
+    <title>Пятый</title>
+    <price>259</price>
+  </item>
+  <item>
+    <title>Шестой</title>
+    <price>782</price>
+  </item>
+   <item>
+    <title>Седьмой</title>
+    <price>123</price>
+  </item>
+  <item>
+    <title>Восьмой</title>
+    <price>235</price>
+  </item>
+</list>

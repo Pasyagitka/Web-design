@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>06</title>
+        <script>
+            //Преобразовать в JSON объект, содержащий ссылку на DOM. Использовать массив свойств, которые подлежат сериализации. 
+            
+            function ErrorToJson() {
+                var user = { name: "Name", age: 25, window: window }; 
+                alert( JSON.stringify(user) ); 
+                // TypeError: cyclic object value
+            }
+            function ToJson() {
+                var user = { name: "Name", age: 25, window: window }; 
+                alert( JSON.stringify(user, ["name", "age"], ' ') ); 
+                // {"name":"Вася","age":25}
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="ErrorToJson()">Error</button>
+        <button onclick="ToJson()">Go</button>
+    </body>
+</html>

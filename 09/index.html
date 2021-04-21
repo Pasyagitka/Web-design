@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>09</title>
+</head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        //Создайте массив, состоящий из целых чисел. 
+        //Преобразуйте все числа в двоичную систему счисления. Выведите результат на страницу. 
+        //Расшифруйте массив. Выведите результат на страницу. 
+        jQuery(document).ready(function($) {	
+            let numbers = [6,367,0,687,271, 08, 54, 332, 889, 43, 88, 1, 32];
+            let binaryNumbers = [];
+            let decodedNumbers = [];
+            let html ="";
+
+            numbers.forEach(number => {
+                //radix
+                binaryNumbers.push(number.toString(2));
+            });
+
+            binaryNumbers.forEach(number => {
+                decodedNumbers.push(parseInt(number, 2));
+            });
+
+            html += "<p>Изначальный массив, состоящий из целых чисел "+ numbers +"</p>";
+            html += "<p>Массив в двоичной сс "+ binaryNumbers +"</p>";
+            html += "<p>Расширофрованный массив "+ decodedNumbers +"</p>";
+            $('#output').html(html);
+        });
+    </script>
+<body>
+        <div id="output"></div>
+</body>
+</html>

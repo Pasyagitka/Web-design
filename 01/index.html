@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+  <title>Google Suggest</title>
+  <script type="text/javascript" src="ajax.js"></script>
+  <style>
+    #country {
+      width: 470px;
+      height: 23px;
+      border: 1px solid black;
+      font-size: 10pt;
+    }
+    .mouseOut {
+      background: #ffffff;
+    }
+    .mouseOver {
+      background: #dbdbdb;
+      cursor: pointer;
+    }
+    table {
+      width: 535px;
+    }
+  </style>
+  <script type="text/javascript" src="ajax.js"> </script>
+</head>
+  <body>
+    <div align="center" style="margin-top: 200px;"> 
+      <p><strong style="font-size: 38pt">Search by country name</strong><br /></p>
+      <input name="country" id="country" onkeyup="KeyPress(this.value)" style="width:535px" />
+      <input name="Search" id="searchbutton" type="button" value="?" onclick="alert('Нажата кнопка поиска')"/>
+      <div align="center" id="searchresults" style="width:535px"></div>
+    </div>
+  </body>
+</html>

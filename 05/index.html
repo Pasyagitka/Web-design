@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>05</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script language="JavaScript" type="text/javascript" src="CometServerApi.js"></script>
+        <style>
+            #chat{
+                width: 250px;
+                height: 300px;
+                border: 2px solid rebeccapurple;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="chat"></div><br>
+        <input type="text" id="username" placeholder="Name" style="width: 245px;"><br><br>
+        <textarea id="message" placeholder="Message..." style="width: 245px;"></textarea><br>
+        <input type="button" onclick="SendMassage()" value="Send">
+        <div id="response"></div>
+    <script>
+        $(document).ready(function() {
+            
+            CometServer().start({dev_id:15,user_id:"liza"});
+            //публичный ключ разработчика. 
+            //идентификатор пользователя  для авторизации пользователя на комет сервере
+
+            //имя канала, callback-функция
+            //subscription добавляет подписки на каналы, события в каналах и отчёты о доставке сообщений в каналы.
+            CometServer().subscription("web_lizachat", function(message)
+            {
+                $("#chat").append("<p><b>" + message.data.name+": </b>" + message.data.text + "</p>");
+            });
+        });
+        function SendMassage() {
+            var text = $("#message").val();
+            var name = $("#username").val();
+            $("#message").val("");  
+            $("#username").val("");  
+            $("#chat").append("<p><b>You</b>: " + text + "</p>"); 
+            CometServer().web_pipe_send("web_lizachat", {"text":text, "name":name});
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>03</title>
+    <script type="text/javascript">
+        $(function(){
+            $('button').click(function(){ //GET
+                $('#get').load('db.php?name=Paragraph№1&dev=Zinovich');
+            });
+        });
+        $(function(){ //GET
+            $('button').click(function(){
+                $('#fromhtml').load('db.html .paragraph2');
+            });
+        });
+        $(function(){ //POST
+            $('button').click(function(){
+                $('#callback').load('db.php', {name: 'Paragraph №2', dev: '&#169Zinovich Elizaveta Igorevna'},
+                function(){alert('Load was performed');});
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Go</button>
+    <div id="get"><h3>GET</h3></div>
+    <div id="fromhtml">HTML</div>
+    <div id="callback">callback</div>
+</body>
+</html>
+
+<!-- $.ajax({
+    type: "POST",
+    url: url,
+    data: data,
+    success: success,
+    dataType: dataType
+  }); -->
+
